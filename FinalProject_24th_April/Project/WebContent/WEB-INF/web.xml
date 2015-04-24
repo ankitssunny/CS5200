@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>JWS_JPA</display-name>
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+    <welcome-file>homepage.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>api</param-value>
+    </init-param>
+    <init-param>
+      <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+ 
+ <servlet>
+   <servlet-name>Register</servlet-name>
+  	<servlet-class>neu.edu.Project.API.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Register</servlet-name>
+  	<url-pattern>/registerAction</url-pattern>
+  </servlet-mapping>
+ 
+ <servlet>
+   <servlet-name>Update</servlet-name>
+  	<servlet-class>neu.edu.Project.API.Update</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Update</servlet-name>
+  	<url-pattern>/updateAction</url-pattern>
+  </servlet-mapping>
+ 
+ 
+  <servlet>
+   <servlet-name>LoginVerify</servlet-name>
+  	<servlet-class>neu.edu.Project.API.LoginVerify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginVerify</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+ 
+ <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>neu.edu.Project.API.LogOut</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+   <servlet-name>ViewFriend</servlet-name>
+  	<servlet-class>neu.edu.Project.API.ViewFriend</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewFriend</servlet-name>
+  	<url-pattern>/View</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SearchUserServlet</servlet-name>
+    <servlet-class>neu.edu.Project.API.SearchUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchUserServlet</servlet-name>
+    <url-pattern>/searchUserAction</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddFriend</servlet-name>
+    <servlet-class>neu.edu.Project.API.AddFriend</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddFriend</servlet-name>
+    <url-pattern>/AddFriendAction</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <servlet-name>UserCommunity</servlet-name>
+    <servlet-class>neu.edu.Project.API.UserCommunity</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserCommunity</servlet-name>
+    <url-pattern>/UserCommunityAction</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CreateCommunity</servlet-name>
+    <servlet-class>neu.edu.Project.API.CreateCommunity</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateCommunity</servlet-name>
+    <url-pattern>/CreateCommunityAction</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>LikeProduct</servlet-name>
+    <servlet-class>neu.edu.Project.API.LikeProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LikeProduct</servlet-name>
+    <url-pattern>/LikeProductAction</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
