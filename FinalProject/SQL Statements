@@ -1,0 +1,51 @@
+ create table user (
+username VARCHAR(20) PRIMARY KEY,
+password VARCHAR(20) NOT NULL,
+firstname varchar(20) null,
+lastname varchar(20) null,
+credit_card VARCHAR(30),
+address VARCHAR(50),
+contact varchar(20) null,
+email VARCHAR(30));
+
+
+
+create table community(
+name varchar(20) not null primary key,
+creator varchar(15) not null,
+description varchar(100));
+
+
+
+create table user_communities(
+name varchar(15),
+cname varchar(15),
+foreign key (name) references user(username) on delete cascade,
+foreign key (cname) references community(name) on delete cascade,
+primary key(name,cname));
+
+
+
+create table friends(
+user varchar(15) not null,
+friend varchar(15) not null,
+primary key(user, friend),
+check(user != friend));
+
+
+
+CREATE TABLE Comments(
+commentid INT PRIMARY KEY AUTO_INCREMENT,
+commenter VARCHAR(15) not null,
+community VARCHAR(15) not null,
+content VARCHAR(400),
+FOREIGN KEY(commenter) references User(username) on delete cascade,
+FOREIGN KEY(community) references community(name) on delete cascade
+);
+
+CREATE TABLE Likes(
+username VARCHAR(15) not null,
+itemname VARCHAR(200) NOT NULL,
+FOREIGN KEY(username) references User(username) on delete cascade,
+PRIMARY KEY (username, itemname)
+);
