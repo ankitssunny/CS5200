@@ -9,9 +9,10 @@ import javax.persistence.*;
 @IdClass(MyKey_friends.class)
 public class friends{
 	@Id
-	String user;
+	public String user;
 	@Id
-	String friend;
+	public String friend;
+	
 	public String getUser() {
 		return user;
 	}

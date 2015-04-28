@@ -1,11 +1,11 @@
 package neu.edu.Project.API;
 
 import neu.edu.Project.Entity.*;
+import java.net.HttpURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -37,21 +37,21 @@ public class EBayAPI {
 			JSONParser parser = new JSONParser();
 		try {
 			
-				JSONObject root = (JSONObject) parser.parse(json);
-				JSONArray ItemArray = (JSONArray) root.get("Item");
+				JSONObject object = (JSONObject) parser.parse(json);
+				JSONArray Items = (JSONArray) object.get("Item");
 				
-				if(ItemArray != null) {
-				Integer length = ItemArray.size();
+				if(Items != null) {
+				Integer len = Items.size();
 				
-					for (int i = 0; i < length; i++ ) {
-						JSONObject FirstItem = (JSONObject) ItemArray.get(i);
-						String ItemID = FirstItem.get("ItemID").toString();
-						String Title = FirstItem.get("Title").toString();
-						String GalleryURL = FirstItem.get("GalleryURL").toString();
-						String PrimaryCategoryName = FirstItem.get("PrimaryCategoryName").toString();
-						JSONObject ConvertedCurrentPriceList = (JSONObject) FirstItem.get("ConvertedCurrentPrice");
-						Double ConvertedCurrentPrice = (Double) ConvertedCurrentPriceList.get("Value");		
-						Product product = new Product(ItemID, Title, GalleryURL, PrimaryCategoryName, ConvertedCurrentPrice);
+					for (int i = 0; i < len; i++ ) {
+						JSONObject it = (JSONObject) Items.get(i);
+						Product product = new Product();
+						product.ItemID = it.get("ItemID").toString();
+						product.Title = it.get("Title").toString();
+						product.GalleryURL = it.get("GalleryURL").toString();
+						product.PrimaryCategoryName = it.get("PrimaryCategoryName").toString();
+						JSONObject ConvertedCurrentPriceList = (JSONObject) it.get("ConvertedCurrentPrice");
+						product.ConvertedCurrentPrice = (Double) ConvertedCurrentPriceList.get("Value");		
 						products.add(product);					
 					}
 				}

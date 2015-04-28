@@ -3,11 +3,11 @@ package neu.edu.Project.Entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class Product {
-	private String ItemID;
-	private String Title;
-	private String GalleryURL;
-	private String PrimaryCategoryName;
-	private Double ConvertedCurrentPrice;
+	public String ItemID;
+	public String Title;
+	public String GalleryURL;
+	public String PrimaryCategoryName;
+	public Double ConvertedCurrentPrice;
 	public String getItemID() {
 		return ItemID;
 	}

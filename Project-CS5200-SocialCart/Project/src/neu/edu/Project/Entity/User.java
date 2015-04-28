@@ -5,14 +5,14 @@ import javax.persistence.*;
 @Table(name="user")
 public class User{
 	@Id
-	private String username;
-	private String password;
-	private String credit_card;
-	private String address;
-	private String email;
-	private String firstname;
-	private String lastname;
-	private String contact;
+	public String username;
+	public String password;
+	public String credit_card;
+	public String address;
+	public String email;
+	public String firstname;
+	public String lastname;
+	public String contact;
 	
 	public String getUsername() {
 		return username;

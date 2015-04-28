@@ -7,9 +7,9 @@ import javax.persistence.*;
 @IdClass(MyKey_Likes.class)
 public class Likes {
 	@Id
-	private String username;
+	public String username;
 	@Id
-	private String itemname;
+	public String itemname;
 	public String getUsername() {
 		return username;
 	}
