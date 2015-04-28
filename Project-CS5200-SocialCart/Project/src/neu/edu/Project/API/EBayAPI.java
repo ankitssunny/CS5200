@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+// Reference for JSON Parsing taken from Github Account of Jose Annunziato
 public class EBayAPI {
 	private String FINDBYKEYWORD = "http://open.api.ebay.com/shopping?appid=studentf1-98a2-4f06-8377-530d81ed27b&version=517&siteid=0&callname=FindItems&QueryKeywords={{KEYWORD}}&responseencoding=JSON&MaxEntries=10";
 	public List<Product> ProductByKeyword(String search) {
