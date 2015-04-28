@@ -51,7 +51,7 @@
 		if(keyword != null && keyword.length() > 1)
 		{
 			List<Product> products = new ArrayList<Product>();
-			products = client.getProductsforKeyword(keyword);
+			products = client.ProductByKeyword(keyword);
 %>
 		<table class="table">
 				<tr>
