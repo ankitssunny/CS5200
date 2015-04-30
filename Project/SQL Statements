@@ -41,11 +41,7 @@ foreign key(username) references user(username) on delete cascade,
 primary key(username, itemname));
 
 create table AddtoCart(
-
 username varchar(20) not null,
-
 item varchar(200) not null,
-
 foreign key(username) references user(username) on delete cascade,
-
 primary key(username, item));
